@@ -1,83 +1,113 @@
-/* Estilos del Proyecto Música — paleta institucional */
-:root {
-  --terracota: #C0612B;
-  --teal: #3A8C8C;
-  --dorado: #E8C84A;
-  --pergamino: #F3EBD9;
-  --superficie: #FBF6EA;
-  --linea: #D9CBB0;
-  --tinta: #2B2118;
-  --suave: #6B5B4B;
-}
-
-* { box-sizing: border-box; }
-
 body {
-  margin: 0;
-  background: var(--pergamino);
-  color: var(--tinta);
-  font-family: "Trebuchet MS", sans-serif;
-  line-height: 1.5;
+    font-family: Arial, sans-serif;
+    background: #f2f4f8;
+    margin: 0;
+    padding: 30px;
+    color: #222;
 }
 
-header {
-  background: var(--terracota);
-  color: #fff;
-  padding: 1rem 1.5rem;
-  border-bottom: 4px solid var(--dorado);
+.contenedor {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
 }
-header h1 { margin: 0; font-size: 1.4rem; }
-header nav a { color: #fff; margin-right: 1rem; font-weight: bold; }
 
-main { max-width: 900px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+h1 {
+    color: #d62828;
+}
 
-h2 { color: var(--teal); border-bottom: 2px solid var(--teal); padding-bottom: .3rem; }
+input, select, button {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0 15px;
+}
+
+button {
+    background: #d62828;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #222;
+    color: white;
+}
 
 .error {
-  background: #F7E2D6;
-  border-left: 5px solid var(--terracota);
-  padding: .7rem 1rem;
-  margin: 1rem 0;
-  font-weight: bold;
+    color: #b00020;
 }
 
-table { width: 100%; border-collapse: collapse; background: var(--superficie); margin: 1rem 0; }
-th { background: var(--terracota); color: #fff; text-align: left; padding: .5rem .6rem; }
-td { padding: .5rem .6rem; border-bottom: 1px solid var(--linea); vertical-align: middle; }
-td.acciones { white-space: nowrap; }
-td.acciones form { display: inline; }
-.vacio { color: var(--suave); font-style: italic; }
-
-form.formulario {
-  background: var(--superficie);
-  border: 1px solid var(--linea);
-  border-radius: 8px;
-  padding: 1rem;
-  display: grid;
-  gap: .7rem;
-  max-width: 420px;
-}
-form.formulario label { display: grid; gap: .2rem; font-weight: bold; font-size: .95rem; }
-input {
-  font: inherit;
-  padding: .4rem .5rem;
-  border: 1px solid var(--linea);
-  border-radius: 5px;
+.buscador {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
 }
 
-button, .boton {
-  font: inherit;
-  font-weight: bold;
-  background: var(--teal);
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: .4rem .9rem;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
+.buscador input {
+    flex: 1;
+    width: auto;
 }
-button.peligro { background: var(--terracota); }
-.boton.secundario { background: var(--suave); }
 
-footer { text-align: center; color: var(--suave); font-size: .85rem; padding: 1rem; }
+.buscador button {
+    width: auto;
+    min-width: 130px;
+}
+
+.volver {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* Contenedor de los botones */
+.botones-acciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Diseño de los botones */
+.boton-accion {
+    display: inline-block;
+    padding: 12px 22px;
+    background-color: #d62828;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton-accion:hover {
+    background-color: #a91f1f;
+    transform: translateY(-2px);
+}
+
+/* Botón para volver al menú */
+.boton-menu {
+    background-color: #202334;
+}
+
+.boton-menu:hover {
+    background-color: #3c4158;
+}

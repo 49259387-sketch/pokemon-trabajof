@@ -1,35 +1,229 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Proyecto Música</title>
-  <link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8">
+    <title>PokéCards TCG</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f3f8;
+            color: #202334;
+        }
+
+        header {
+            background: #202334;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #ffcb05;
+        }
+
+        header span {
+            color: white;
+            font-size: 14px;
+        }
+
+        .portada {
+            padding: 65px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #d62828, #8d1717);
+            color: white;
+        }
+
+        .portada h2 {
+            font-size: 38px;
+            margin: 0 0 15px;
+        }
+
+        .portada p {
+            font-size: 17px;
+            max-width: 600px;
+            margin: 0 auto 25px;
+            line-height: 1.6;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 13px 22px;
+            margin: 6px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            background: #ffcb05;
+            color: #202334;
+        }
+
+        .boton:hover {
+            background: #ffe16b;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .secciones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
+        }
+
+        .tarjeta {
+            background: white;
+            border-radius: 10px;
+            padding: 28px;
+            border-top: 5px solid #d62828;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .tarjeta h3 {
+            margin-top: 0;
+            color: #d62828;
+        }
+
+        .tarjeta p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .tarjeta a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 16px;
+            background: #202334;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .tarjeta a:hover {
+            background: #3c4158;
+        }
+
+        .informacion {
+            margin-top: 30px;
+            padding: 22px;
+            background: white;
+            border-radius: 10px;
+            line-height: 1.7;
+        }
+
+        footer {
+            margin-top: 45px;
+            padding: 22px;
+            background: #202334;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .portada h2 {
+                font-size: 29px;
+            }
+
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
+
 <header>
-  <h1>Proyecto Música</h1>
+    <h1>PokéCards TCG</h1>
+    <span>Tu colección de cartas Pokémon</span>
 </header>
+
+<section class="portada">
+    <h2>Mira tu Coleccion</h2>
+
+    <p>
+     Explorá tus cartas Pokémon, buscá tus cartas favoritas
+        y consultá las expansiones de tu colección desde un mismo lugar.
+    </p>
+
+    <a class="boton"
+       href="SvCartaListar">
+        Ver cartas
+    </a>
+    
+     <a class="boton"
+       href="SvExpansionListar">
+        Ver Expansion
+    </a>
+
+   
+</section>
+
 <main>
-  <p><b>Si ves esta página, Tomcat está corriendo la aplicación.</b></p>
-  <p>Las pantallas se abren desde los Servlets, no desde los JSP. Mientras no hayas creado el Servlet, el enlace da error 404.</p>
+    <div class="titulo">
+        <h2>Expandi tu coleccion</h2>
+        <p>Elegí qué sección querés administrar.</p>
+    </div>
 
-  <h2>Pantallas</h2>
-  <p>
-    <a class="boton" href="SvArtistaListar">Artistas</a>
-    <a class="boton" href="SvCancionListar">Canciones</a>
-  </p>
+    <div class="secciones">
 
-  <h2>Servlets que vas a crear</h2>
-  <table>
-    <tr><th>Servlet</th><th>Método</th><th>Qué hace</th></tr>
-    <tr><td><code>SvArtistaListar</code></td><td>GET</td><td>Busca todos y hace forward a <code>artistas.jsp</code></td></tr>
-    <tr><td><code>SvArtistaCrear</code></td><td>POST</td><td>Alta, y redirige al listado</td></tr>
-    <tr><td><code>SvArtistaEditar</code></td><td>GET / POST</td><td>GET: muestra <code>editarArtista.jsp</code>. POST: guarda los cambios</td></tr>
-    <tr><td><code>SvArtistaEliminar</code></td><td>POST</td><td>Baja, y redirige al listado</td></tr>
-  </table>
-  <p>Y los mismos cuatro para Canción: <code>SvCancionListar</code>, <code>SvCancionCrear</code>, <code>SvCancionEditar</code> y <code>SvCancionEliminar</code>.</p>
+        <div class="tarjeta">
+            <h3>Cartas Pokémon</h3>
+            <p>
+                Registrá nuevas cartas con su nombre, tipo, rareza,
+                número y expansión correspondiente.
+            </p>
+          <a href="SvCartaListar">
+    Listar cartas
+</a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Expansiones</h3>
+            <p>
+                Creá y consultá las expansiones que forman parte
+                de tu colección.
+            </p>
+            <a href="SvExpansionListar">
+   				 Listar expansiones
+			</a>
+        </div>
+
+    </div>
+
+    <div class="informacion">
+        <h3>Acerca del proyecto</h3>
+        <p>
+            PokéCards TCG es una aplicación web desarrollada para
+            administrar cartas y expansiones del Juego de Cartas
+            Coleccionables Pokémon. Utiliza Java, Servlets, JSP,
+            JPA, Hibernate y MySQL.
+        </p>
+    </div>
 </main>
-<footer>Prof. Sebastián Muñoz — Instituto Técnico Ntra. Sra. de Fátima (A-893)</footer>
+
+<footer>
+    PokéCards TCG — Proyecto de aplicación web
+</footer>
+
 </body>
 </html>
