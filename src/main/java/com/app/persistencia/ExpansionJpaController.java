@@ -123,5 +123,24 @@ public class ExpansionJpaController {
             em.close();
         }
     }
+    
+
+    public List<Expansion> buscarPorNombre(String nombre) {
+
+    EntityManager em = getEntityManager();
+
+    try {
+        return em.createQuery(
+            "SELECT e FROM Expansion e " +
+            "WHERE LOWER(e.nombre) LIKE LOWER(:nombre)",
+            Expansion.class
+        )
+        .setParameter("nombre", "%" + nombre + "%")
+        .getResultList();
+
+    } finally {
+        em.close();
+    }
+}
 
 }

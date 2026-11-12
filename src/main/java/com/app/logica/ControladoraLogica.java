@@ -35,7 +35,13 @@ public class ControladoraLogica {
     public void eliminarExpansion(int id) {
         expansionJpa.eliminar(id);
     }
+    
 
+    public List<Expansion> buscarExpansionesPorNombre(String nombre) {
+    return expansionJpa.buscarPorNombre(nombre);
+    }
+
+    
     // =========================
     // MÉTODOS PARA CARTAS
     // =========================
